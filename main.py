@@ -104,6 +104,7 @@ def read_html_page(filepath: str):
         gpx_segment.points.append(gpxpy.gpx.GPXTrackPoint(
             latitude=row['Lat'],
             longitude=row['Long'],
+            time=df['Unix-Time'][np.floor(index * countRatio)],
             elevation=df['Elevation-Meters'][np.floor(index * countRatio)],
             speed=df['Speed-Meters'][np.floor(index * countRatio)]
         ))
